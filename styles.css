@@ -1,0 +1,15 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.color-block{
+  margin: 0;
+  padding: 0;
+  Float: left;
+  width: 2vw;
+  height: 2vh;
+  border-radius: 1vw;
+}
