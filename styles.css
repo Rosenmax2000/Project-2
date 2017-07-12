@@ -11,5 +11,49 @@ body{
   Float: left;
   width: 2vw;
   height: 2vh;
-  border-radius: 1vw;
+  border-radius: 1.5vw;
+}
+
+.button{
+  width: 15vw;
+  height: 3vh;
+  Float: left;
+  margin-top: 5vh;
+}
+
+.color-box{
+  width: 16vw;
+  height: 6vh;
+  background-color: yellow;
+  margin-top: 5vh;
+  position: absolute;
+  right: 0px;
+  font-size: 150%;
+}
+
+.buttonR{
+  width: 10vw;
+  height: 4vh;
+  margin-top: 12vh;
+  position: absolute;
+  right: 0px;
+  background-color: red;
+}
+
+.buttonG{
+  width: 10vw;
+  height: 4vh;
+  margin-top: 16vh;
+  position: absolute;
+  right: 0px;
+  background-color: green;
+}
+
+.buttonB{
+  width: 10vw;
+  height: 4vh;
+  margin-top: 20vh;
+  position: absolute;
+  right: 0px;
+  background-color: blue;
 }

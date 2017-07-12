@@ -1,3 +1,15 @@
+window.addEventListener("mousedown", setFlag);
+window.addEventListener("mouseup", unsetFlag);
+
+var mouseClicked = false;
+function setFlag(){
+  mouseClicked = true;
+}
+
+function unsetFlag(){
+  mouseClicked = false;
+}
+
 function randInt (maximum) {
   var randFloat = Math.random();
   var scaledFloat = maximum * randFloat;
@@ -6,21 +18,41 @@ function randInt (maximum) {
 }
 
 function randColor(){
-  var randRed = randInt() * 255;
-  var randGreen = randInt() * 255;
-  var randBlue = randInt() * 255;
-  return "rgb("+randomRed+","+randomGreen+","+randomBlue+")";
+  console.log("got into randColor");
+  var randRed = randInt(255);
+  var randGreen = randInt(255);
+  var randBlue = randInt(255);
+  return "rgb("+randRed+","+randGreen+","+randBlue+")";
+}
+
+function newColor(){
+  if (red.clicked == true){
+    event.currentTarget.style.backgroundColor = "red";
+  } else if (green.clicked == true){
+    event.currentTarget.style.backgroundColor = "green";
+  } else if (blue.clicked == true){
+    event.currentTarget.style.backgroundColor = "blue";
+  } else{
+    event.currentTarget.style.backgroundColor = randColor();
+  }
 }
 
 function changeColor(){
-  event.currentTarget.style.backgroundColor = randColor();
+  console.log("got into changeColor");
+  if (mouseClicked){
+    event.currentTarget.style.backgroundColor = newColor();
+  }
 }
 
-for (i = 0; i < 2048; i++){
+for (i = 0; i < 3000; i++){
   var newBox = document.createElement("DIV");
   newBox.className = "color-block";
   newBox.id = i;
   newBox.style.backgroundColor = "black";
-  newBox.addEventListener("onclick", changeColor;
+  newBox.addEventListener("mouseover", changeColor);
   document.body.appendChild(newBox);
+}
+
+function whitefunction(){
+  document.body.style.backgroundColor = "white";
 }
