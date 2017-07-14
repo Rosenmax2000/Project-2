@@ -5,10 +5,19 @@
 </head>
 <body>
   <div id = "content"> </div>
-  <button id = "white" type="button" onclick ="whitefunction()" class="button" >White Background</button>
-  <button id = "red" type="button" onclick ="redfunction()" class="buttonR" >Red</button>
-  <button id = "green" type="button" class="buttonG" >Green</button>
-  <button id = "blue" type="button" class="buttonB" >Blue</button>
+  <button id = "white" type="button" onclick ="fullBackColor('white'); whitebuttonfunction()" class="backgroundButton W" >White Background</button>
+  <button id = "black" type="button" onclick ="fullBackColor('black')" class="backgroundButton Bla" >Black Background</button>
+  <button id = "PapayaWhip" type="button" onclick ="fullBackColor('PapayaWhip')" class="backgroundButton PW" >PapayaWhip Background</button>
+  <button id = "LightCyan" type="button" onclick ="fullBackColor('LightCyan')" class="backgroundButton LC" >LightCyan Background</button>
+  <button id = "LightGray" type="button" onclick ="fullBackColor('LightGray')" class="backgroundButton LG" >LightGray Background</button>
+
+  <button id = "red" type="button" onclick ="setColor(this);" class="colorButton R" >Red</button>
+  <button id = "orange" type="button" onclick ="setColor(this);" class="colorButton O" >Orange</button>
+  <button id = "yellow" type="button" onclick ="setColor(this);" class="colorButton Y" >Yellow</button>
+  <button id = "green" type="button" onclick ="setColor(this);" class="colorButton G" >Green</button>
+  <button id = "blue" type="button" onclick ="setColor(this);" class="colorButton Blu" >Blue</button>
+  <button id = "indigo" type="button" onclick ="setColor(this);" class="colorButton I" >Indigo</button>
+  <button id = "violet" type="button" onclick ="setColor(this);" class="colorButton V" >Violet</button>
   <div class="color-box"> Paint Color Options </div>
   <script src = "script.js"> </script>
 </body>

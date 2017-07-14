@@ -2,6 +2,8 @@ window.addEventListener("mousedown", setFlag);
 window.addEventListener("mouseup", unsetFlag);
 
 var mouseClicked = false;
+
+var boxColor = "";
 function setFlag(){
   mouseClicked = true;
 }
@@ -26,15 +28,15 @@ function randColor(){
 }
 
 function newColor(){
-  if (red.clicked == true){
-    event.currentTarget.style.backgroundColor = "red";
-  } else if (green.clicked == true){
-    event.currentTarget.style.backgroundColor = "green";
-  } else if (blue.clicked == true){
-    event.currentTarget.style.backgroundColor = "blue";
+  if (boxColor != ""){
+    event.currentTarget.style.backgroundColor = boxColor;
   } else{
     event.currentTarget.style.backgroundColor = randColor();
   }
+}
+
+function setColor(element){
+  boxColor = element.id;
 }
 
 function changeColor(){
@@ -44,15 +46,41 @@ function changeColor(){
   }
 }
 
-for (i = 0; i < 3000; i++){
-  var newBox = document.createElement("DIV");
-  newBox.className = "color-block";
-  newBox.id = i;
-  newBox.style.backgroundColor = "black";
-  newBox.addEventListener("mouseover", changeColor);
-  document.body.appendChild(newBox);
+function setBoxColor(color){
+  for (i = 0; i < 6000; i++){
+    var newBox = document.getElementById(i);
+    newBox.style.backgroundColor = color;
+  }
 }
 
-function whitefunction(){
-  document.body.style.backgroundColor = "white";
+function makeColorBoxes(n){
+  for (i = 0; i < n; i++){
+    document.body.appendChild(colorBox(i));
+  }
+}
+
+function colorBox(i){
+  var self = document.createElement("DIV");
+  self.className = "color-block";
+  self.id = i;
+  self.style.backgroundColor = "black";
+  self.addEventListener("mouseover", changeColor);
+  return self;
+}
+
+var numberOfBoxes = 6000;
+makeColorBoxes(numberOfBoxes);
+
+function backColor(color){
+  document.body.style.backgroundColor = color;
+}
+
+function fullBackColor(color){
+  backColor(color);
+  setBoxColor(color);
+}
+
+function whitebuttonfunction(){
+  document.getElementById("black").style.backgroundColor = "black";
+  document.getElementById("black").style.color = "white";
 }
