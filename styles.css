@@ -9,8 +9,8 @@ body{
   padding: 0;
   Float: left;
   width: 2vw;
-  height: 2vh;
-  border-radius: 2vw;
+  height: 3.5vh;
+  border-radius: 0;
 }
 
 .backgroundButton{
@@ -19,30 +19,6 @@ body{
   position: absolute;
   margin-top: 5vh;
   margin-left: 0;
-}
-
-.W{
-  margin-top: 5vh;
-  background-color: white;
-}
-
-.Bla{
-margin-top: 9vh;
-}
-
-.PW{
-margin-top: 13vh;
-background-color: PapayaWhip;
-}
-
-.LC{
-margin-top: 17vh;
-background-color: LightCyan;
-}
-
-.LG{
-margin-top: 21vh;
-background-color: LightGray;
 }
 
 .color-box{
@@ -60,39 +36,4 @@ background-color: LightGray;
   height: 4vh;
   position: absolute;
   right: 0px;
-}
-
-.R{
-  margin-top: 12vh;
-  background-color: red;
-}
-
-.O{
-  margin-top: 16vh;
-  background-color: orange;
-}
-
-.Y{
-  margin-top: 20vh;
-  background-color: yellow;
-}
-
-.G{
-  margin-top: 24vh;
-  background-color: green;
-}
-
-.Blu{
-  margin-top: 28vh;
-  background-color: blue;
-}
-
-.I{
-  margin-top: 32vh;
-  background-color: indigo;
-}
-
-.V{
-  margin-top: 36vh;
-  background-color: violet;
 }

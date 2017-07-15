@@ -1,6 +1,12 @@
 window.addEventListener("mousedown", setFlag);
 window.addEventListener("mouseup", unsetFlag);
 
+var colorList = ["Red", "Crimson", "Tomato", "Orange", "Yellow", "Gold", "Green",
+"Lime", "Turquoise", "Blue", "Navy", "Indigo", "Violet"];
+
+var backColorList = ["Black", "MidnightBlue", "DarkRed", "PapayaWhip", "Pink",
+"LightCyan", "LightGray", "PaleGreen", "LightYellow", "White" ];
+
 var mouseClicked = false;
 
 var boxColor = "";
@@ -68,9 +74,6 @@ function colorBox(i){
   return self;
 }
 
-var numberOfBoxes = 6000;
-makeColorBoxes(numberOfBoxes);
-
 function backColor(color){
   document.body.style.backgroundColor = color;
 }
@@ -84,3 +87,48 @@ function whitebuttonfunction(){
   document.getElementById("black").style.backgroundColor = "black";
   document.getElementById("black").style.color = "white";
 }
+
+function colorButton(color){
+  var self = document.createElement("BUTTON");
+  self.className = "colorButton";
+  self.id = color;
+  self.style.backgroundColor = color;
+  self.type = "button";
+  self.innerHTML = color;
+  self.addEventListener("click", function(){setColor(this);});
+  return self;
+}
+
+function createColorButton(colorList){
+  for (i = 0; i < colorList.length; i++){
+    var newButton = colorButton(colorList[i]);
+    newButton.style.marginTop = (12 + 4 * i) + "vh";
+    document.body.appendChild(newButton);
+  }
+}
+
+createColorButton(colorList);
+
+function backColorButton(color){
+  var self = document.createElement("BUTTON");
+  self.className = "backgroundButton";
+  self.id = color;
+  self.style.backgroundColor = color;
+  self.type = "button";
+  self.innerHTML = color + " background";
+  self.addEventListener("click", function(){fullBackColor(this.style.backgroundColor);});
+  return self;
+}
+
+function createBackColorButton(backColorList){
+  for (i = 0; i < backColorList.length; i++){
+    var newBackgroundButton = backColorButton(backColorList[i]);
+    newBackgroundButton.style.marginTop = (5 + 4 * i) + "vh";
+    document.body.appendChild(newBackgroundButton);
+  }
+}
+
+createBackColorButton(backColorList);
+
+var numberOfBoxes = 6000;
+makeColorBoxes(numberOfBoxes);
